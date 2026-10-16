@@ -39,13 +39,3 @@ Only an existing project owner/admin should perform this step. Do not create a p
 ## 4. Hosting
 ### Vercel
 Import the GitHub repository into Vercel. This is a static site; no build command is needed and the output directory is `.`. `vercel.json` is included.
-
-### GitHub Pages
-Push the folder to a repository and enable Pages for the branch/root folder. Since this project uses relative links, it works under a repository subpath. Ensure Supabase Auth redirect URLs include the GitHub Pages URL.
-
-## Security notes
-- Supabase anon/public key is intended for browser use when RLS is enabled.
-- Never expose your Supabase service-role key.
-- Admin authorization is enforced by RLS in addition to client-side page checks.
-- User favorites are only readable/writable by their owner.
-- Static pages cannot keep secrets; all sensitive permissions must be enforced in Supabase.
