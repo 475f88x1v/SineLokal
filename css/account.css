@@ -1,0 +1,716 @@
+:root {
+    --account-gold: #e9b949;
+    --account-gold-hover: #f5ce75;
+
+    --account-background: #0b0b0b;
+    --account-surface: #121212;
+    --account-surface-hover: #181818;
+    --account-border: #2c2c2c;
+
+    --account-text: #f3f0e9;
+    --account-muted: #a6a29a;
+    --account-danger: #ff7777;
+
+    --account-radius: 18px;
+    --account-transition: 0.25s ease;
+}
+
+.account-main {
+    width: min(100% - 40px, 1000px);
+    margin-inline: auto;
+    padding-top: 64px;
+    padding-bottom: 80px;
+    color: var(--account-text);
+}
+
+.account-hero {
+    max-width: 700px;
+    margin-bottom: 38px;
+}
+
+.account-hero .eyebrow {
+    margin: 0 0 12px;
+    color: var(--account-gold);
+    font-size: 0.76rem;
+    font-weight: 700;
+    letter-spacing: 2.2px;
+    line-height: 1.5;
+    text-transform: uppercase;
+}
+
+.account-hero h1 {
+    margin: 0;
+    color: var(--account-text);
+    font-size: clamp(2.2rem, 5vw, 3.4rem);
+    font-weight: 750;
+    letter-spacing: -1.8px;
+    line-height: 1.12;
+}
+
+.account-intro {
+    max-width: 590px;
+    margin: 17px 0 0;
+    color: var(--account-muted);
+    font-size: 1rem;
+    line-height: 1.8;
+}
+
+.account-card {
+    overflow: hidden;
+    width: 100%;
+    background: var(--account-surface);
+    border: 1px solid var(--account-border);
+    border-radius: var(--account-radius);
+    box-shadow: 0 18px 45px rgb(0 0 0 / 18%);
+}
+
+.account-card-header {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    padding: 28px 32px;
+    background:
+        linear-gradient(
+            120deg,
+            rgb(233 185 73 / 7%),
+            transparent 65%
+        );
+    border-bottom: 1px solid var(--account-border);
+}
+
+.account-avatar {
+    display: flex;
+    flex: 0 0 58px;
+    align-items: center;
+    justify-content: center;
+    width: 58px;
+    height: 58px;
+    color: var(--account-gold);
+    background: rgb(233 185 73 / 10%);
+    border: 1px solid rgb(233 185 73 / 30%);
+    border-radius: 50%;
+}
+
+.account-avatar svg {
+    display: block;
+    width: 29px;
+    height: 29px;
+}
+
+.account-card-heading {
+    min-width: 0;
+}
+
+.account-card-heading h2 {
+    margin: 0;
+    color: var(--account-text);
+    font-size: 1.3rem;
+    font-weight: 700;
+    line-height: 1.4;
+}
+
+.account-card-heading p {
+    margin: 6px 0 0;
+    color: var(--account-muted);
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+
+.account-card-body {
+    padding: 30px 32px;
+}
+
+#accountInfo {
+    min-width: 0;
+    color: var(--account-text);
+}
+
+#accountInfo > :first-child {
+    margin-top: 0;
+}
+
+#accountInfo > :last-child {
+    margin-bottom: 0;
+}
+
+#accountInfo h1,
+#accountInfo h2,
+#accountInfo h3,
+#accountInfo h4 {
+    color: var(--account-text);
+}
+
+#accountInfo p {
+    color: var(--account-muted);
+    font-size: 0.94rem;
+    line-height: 1.75;
+    overflow-wrap: anywhere;
+}
+
+/* Loading state */
+
+.account-loading {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    min-height: 56px;
+    margin: 0;
+    color: var(--account-muted);
+    font-size: 0.95rem;
+}
+
+.account-loading::before {
+    content: "";
+    flex: 0 0 17px;
+    width: 17px;
+    height: 17px;
+    border: 2px solid rgb(233 185 73 / 25%);
+    border-top-color: var(--account-gold);
+    border-radius: 50%;
+    animation: account-spin 0.8s linear infinite;
+}
+
+@keyframes account-spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+
+#accountInfo label {
+    display: block;
+    margin-bottom: 8px;
+    color: var(--account-muted);
+    font-size: 0.83rem;
+    font-weight: 600;
+}
+
+#accountInfo strong {
+    color: var(--account-text);
+    font-weight: 650;
+}
+
+#accountInfo a {
+    color: var(--account-gold);
+    text-decoration: none;
+    overflow-wrap: anywhere;
+    transition: color var(--account-transition);
+}
+
+#accountInfo a:hover {
+    color: var(--account-gold-hover);
+    text-decoration: underline;
+}
+
+#accountInfo input,
+#accountInfo select,
+#accountInfo textarea {
+    box-sizing: border-box;
+    width: 100%;
+    min-height: 46px;
+    padding: 12px 14px;
+    color: var(--account-text);
+    background: #0c0c0c;
+    border: 1px solid var(--account-border);
+    border-radius: 9px;
+    outline: none;
+    font: inherit;
+    font-size: 0.94rem;
+    transition:
+        border-color var(--account-transition),
+        box-shadow var(--account-transition);
+}
+
+#accountInfo textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+#accountInfo input:focus,
+#accountInfo select:focus,
+#accountInfo textarea:focus {
+    border-color: var(--account-gold);
+    box-shadow: 0 0 0 3px rgb(233 185 73 / 12%);
+}
+
+#accountInfo input:disabled,
+#accountInfo select:disabled,
+#accountInfo textarea:disabled {
+    color: #aaa69e;
+    cursor: not-allowed;
+    opacity: 0.75;
+}
+
+
+#accountInfo button {
+    min-height: 42px;
+    padding: 10px 17px;
+    color: #17130a;
+    background: var(--account-gold);
+    border: 1px solid var(--account-gold);
+    border-radius: 9px;
+    font: inherit;
+    font-size: 0.9rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition:
+        background var(--account-transition),
+        border-color var(--account-transition),
+        transform var(--account-transition);
+}
+
+#accountInfo button:hover {
+    background: var(--account-gold-hover);
+    border-color: var(--account-gold-hover);
+}
+
+#accountInfo button:active {
+    transform: translateY(1px);
+}
+
+#accountInfo button:disabled {
+    cursor: not-allowed;
+    opacity: 0.55;
+}
+
+#accountInfo .error,
+#accountInfo .account-error,
+#accountInfo [role="alert"] {
+    color: var(--account-danger);
+}
+
+#accountInfo .success,
+#accountInfo .account-success {
+    color: #8bd9a8;
+}
+
+.account-divider {
+    width: 100%;
+    height: 1px;
+    margin: 30px 0;
+    background: var(--account-border);
+}
+
+.account-logout-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+}
+
+.account-logout-copy {
+    flex: 1;
+    min-width: 0;
+}
+
+.account-logout-copy h3 {
+    margin: 0;
+    color: var(--account-text);
+    font-size: 1.05rem;
+    font-weight: 700;
+    line-height: 1.5;
+}
+
+.account-logout-copy p {
+    max-width: 540px;
+    margin: 8px 0 0;
+    color: var(--account-muted);
+    font-size: 0.9rem;
+    line-height: 1.75;
+}
+
+.account-logout-button {
+    display: inline-flex;
+    flex: 0 0 auto;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    min-height: 46px;
+    padding: 12px 20px;
+    color: #ff9b9b;
+    background: transparent;
+    border: 1px solid rgb(255 119 119 / 40%);
+    border-radius: 10px;
+    font: inherit;
+    font-size: 0.9rem;
+    font-weight: 700;
+    white-space: nowrap;
+    cursor: pointer;
+    transition:
+        color var(--account-transition),
+        background var(--account-transition),
+        border-color var(--account-transition),
+        transform var(--account-transition);
+}
+
+.account-logout-button svg {
+    display: block;
+    flex: 0 0 19px;
+    width: 19px;
+    height: 19px;
+}
+
+.account-logout-button:hover {
+    color: #ffffff;
+    background: rgb(220 70 70 / 14%);
+    border-color: #e36d6d;
+}
+
+.account-logout-button:active {
+    transform: translateY(1px);
+}
+
+.account-logout-button:focus-visible {
+    outline: 3px solid rgb(233 185 73 / 65%);
+    outline-offset: 4px;
+}
+
+.account-discover {
+    display: flex;
+    align-items: center;
+    gap: 22px;
+    margin-top: 26px;
+    padding: 27px 30px;
+    background:
+        linear-gradient(
+            115deg,
+            rgb(233 185 73 / 9%),
+            rgb(233 185 73 / 2%) 75%
+        );
+    border: 1px solid rgb(233 185 73 / 23%);
+    border-radius: var(--account-radius);
+    transition:
+        border-color var(--account-transition),
+        background var(--account-transition);
+}
+
+.account-discover:hover {
+    background:
+        linear-gradient(
+            115deg,
+            rgb(233 185 73 / 12%),
+            rgb(233 185 73 / 3%) 75%
+        );
+    border-color: rgb(233 185 73 / 42%);
+}
+
+.account-discover-icon {
+    display: flex;
+    flex: 0 0 52px;
+    align-items: center;
+    justify-content: center;
+    width: 52px;
+    height: 52px;
+    color: var(--account-gold);
+    background: rgb(233 185 73 / 10%);
+    border: 1px solid rgb(233 185 73 / 25%);
+    border-radius: 13px;
+}
+
+.account-discover-icon svg {
+    display: block;
+    width: 25px;
+    height: 25px;
+}
+
+.account-discover-copy {
+    flex: 1;
+    min-width: 0;
+}
+
+.account-discover-copy h2 {
+    margin: 0;
+    color: var(--account-text);
+    font-size: 1.08rem;
+    font-weight: 700;
+    line-height: 1.5;
+}
+
+.account-discover-copy p {
+    margin: 7px 0 0;
+    color: var(--account-muted);
+    font-size: 0.9rem;
+    line-height: 1.7;
+}
+
+.account-browse-button {
+    display: inline-flex;
+    flex: 0 0 auto;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    min-height: 46px;
+    padding: 12px 19px;
+    color: #17130a;
+    background: var(--account-gold);
+    border: 1px solid var(--account-gold);
+    border-radius: 10px;
+    font-size: 0.9rem;
+    font-weight: 750;
+    text-decoration: none;
+    white-space: nowrap;
+    transition:
+        background var(--account-transition),
+        border-color var(--account-transition),
+        transform var(--account-transition),
+        box-shadow var(--account-transition);
+}
+
+.account-browse-button span {
+    font-size: 1.15rem;
+    line-height: 1;
+    transition: transform var(--account-transition);
+}
+
+.account-browse-button:hover {
+    color: #17130a;
+    background: var(--account-gold-hover);
+    border-color: var(--account-gold-hover);
+    box-shadow: 0 5px 18px rgb(233 185 73 / 12%);
+    transform: translateY(-2px);
+}
+
+.account-browse-button:hover span {
+    transform: translateX(3px);
+}
+
+.account-browse-button:active {
+    transform: translateY(0);
+}
+
+.account-browse-button:focus-visible {
+    outline: 3px solid rgb(233 185 73 / 65%);
+    outline-offset: 4px;
+}
+
+.account-main a:focus-visible,
+.account-main button:focus-visible,
+#accountInfo input:focus-visible,
+#accountInfo select:focus-visible,
+#accountInfo textarea:focus-visible {
+    outline: 2px solid var(--account-gold);
+    outline-offset: 4px;
+}
+
+.account-main button:disabled {
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+
+@media (prefers-reduced-motion: reduce) {
+    .account-main *,
+    .account-main *::before,
+    .account-main *::after {
+        scroll-behavior: auto !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+@media (max-width: 768px) {
+    .account-main {
+        width: min(100% - 32px, 1000px);
+        padding-top: 48px;
+        padding-bottom: 60px;
+    }
+
+    .account-hero {
+        margin-bottom: 30px;
+    }
+
+    .account-hero h1 {
+        letter-spacing: -1.2px;
+    }
+
+    .account-card-header {
+        gap: 15px;
+        padding: 24px;
+    }
+
+    .account-card-body {
+        padding: 25px 24px;
+    }
+
+    .account-divider {
+        margin: 25px 0;
+    }
+
+    .account-discover {
+        align-items: flex-start;
+        gap: 17px;
+        padding: 24px;
+    }
+
+    .account-discover-icon {
+        flex-basis: 46px;
+        width: 46px;
+        height: 46px;
+    }
+
+    .account-discover-copy h2 {
+        font-size: 1rem;
+    }
+
+    .account-browse-button {
+        padding-inline: 15px;
+    }
+}
+
+@media (max-width: 560px) {
+    .account-main {
+        width: calc(100% - 28px);
+        padding-top: 36px;
+        padding-bottom: 46px;
+    }
+
+    .account-hero {
+        margin-bottom: 25px;
+    }
+
+    .account-hero .eyebrow {
+        font-size: 0.7rem;
+        letter-spacing: 1.7px;
+    }
+
+    .account-hero h1 {
+        font-size: clamp(2rem, 9vw, 2.7rem);
+        letter-spacing: -1px;
+    }
+
+    .account-intro {
+        margin-top: 13px;
+        font-size: 0.93rem;
+        line-height: 1.75;
+    }
+
+    .account-card {
+        border-radius: 14px;
+    }
+
+    .account-card-header {
+        gap: 13px;
+        padding: 20px 18px;
+    }
+
+    .account-avatar {
+        flex-basis: 48px;
+        width: 48px;
+        height: 48px;
+    }
+
+    .account-avatar svg {
+        width: 25px;
+        height: 25px;
+    }
+
+    .account-card-heading h2 {
+        font-size: 1.08rem;
+    }
+
+    .account-card-heading p {
+        margin-top: 4px;
+        font-size: 0.81rem;
+    }
+
+    .account-card-body {
+        padding: 22px 18px;
+    }
+
+    .account-divider {
+        margin: 23px 0;
+    }
+
+    .account-logout-section {
+        align-items: stretch;
+        flex-direction: column;
+        gap: 18px;
+    }
+
+    .account-logout-copy h3 {
+        font-size: 1rem;
+    }
+
+    .account-logout-copy p {
+        font-size: 0.86rem;
+    }
+
+    .account-logout-button {
+        width: 100%;
+        min-height: 46px;
+    }
+
+    .account-discover {
+        flex-wrap: wrap;
+        gap: 15px;
+        margin-top: 20px;
+        padding: 20px 18px;
+        border-radius: 14px;
+    }
+
+    .account-discover-icon {
+        flex-basis: 43px;
+        width: 43px;
+        height: 43px;
+        border-radius: 11px;
+    }
+
+    .account-discover-icon svg {
+        width: 22px;
+        height: 22px;
+    }
+
+    .account-discover-copy {
+        flex: 1 1 calc(100% - 60px);
+    }
+
+    .account-discover-copy h2 {
+        font-size: 0.98rem;
+    }
+
+    .account-discover-copy p {
+        font-size: 0.85rem;
+        line-height: 1.65;
+    }
+
+    .account-browse-button {
+        flex: 1 1 100%;
+        width: 100%;
+        min-height: 46px;
+    }
+}
+
+@media (max-width: 360px) {
+    .account-main {
+        width: calc(100% - 22px);
+        padding-top: 28px;
+    }
+
+    .account-card-header {
+        gap: 11px;
+        padding: 17px 14px;
+    }
+
+    .account-avatar {
+        flex-basis: 42px;
+        width: 42px;
+        height: 42px;
+    }
+
+    .account-card-heading h2 {
+        font-size: 1rem;
+    }
+
+    .account-card-heading p {
+        font-size: 0.76rem;
+    }
+
+    .account-card-body {
+        padding: 19px 14px;
+    }
+
+    .account-discover {
+        padding: 17px 14px;
+    }
+}
