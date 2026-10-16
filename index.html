@@ -1,0 +1,167 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta
+        name="description"
+        content="Discover Filipino films across generations with SineLokal."
+    >
+
+    <meta name="theme-color" content="#0b0b0b">
+
+    <title>SineLokal — Filipino Films, Closer to Home</title>
+
+    <link rel="stylesheet" href="css/site.css">
+    <link rel="stylesheet" href="css/navbar.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/disclaimer.css">
+    <link rel="stylesheet" href="css/about.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="js/supabase-config.js"></script>
+    <script src="js/supabase-client.js"></script>
+
+    <script src="js/movies.js"></script>
+
+    <script defer src="js/components.js"></script>
+
+    <script defer src="js/disclaimer.js"></script>
+
+    <script defer src="js/app.js"></script>
+</head>
+
+<body data-page="home">
+
+    <div id="navbarComponent"></div>
+
+    <main>
+
+        <section class="hero container">
+            <div>
+                <p class="eyebrow">YOUR FILIPINO FILM DIRECTORY</p>
+
+                <h1>
+                    Stories that bring<br>
+                    <em>us closer.</em>
+                </h1>
+
+                <p class="hero-copy">
+                    Discover Filipino movies across different genres, stories,
+                    and generations. Celebrate the films that feel like home.
+                </p>
+
+                <div class="hero-actions">
+                    <a class="button button-gold" href="browse.html">
+                        Explore the library ↗
+                    </a>
+
+                    <button
+                        class="button button-outline"
+                        type="button"
+                        id="heroGenres"
+                        onclick="document.getElementById('openGenres')?.click()"
+                    >
+                        Explore genres
+                    </button>
+                </div>
+            </div>
+
+            <div class="hero-art">
+                <div class="hero-art-copy">
+                    <span>MADE OF OUR STORIES</span>
+
+                    <strong>
+                        Philippine cinema, in one place.
+                    </strong>
+
+                    <span>DRAMA · ROMANCE · COMEDY · MORE</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="section container" id="movieContainerSection">
+            <div class="section-heading">
+                <div>
+                    <h2>Featured Films</h2>
+
+                    <p>
+                        A few stories to start your next movie night.
+                    </p>
+                </div>
+
+                <a class="text-link" href="browse.html">
+                    Browse all films →
+                </a>
+            </div>
+
+            <div id="featuredGrid" class="movie-grid">
+                <p class="empty-state">Loading films…</p>
+            </div>
+        </section>
+
+        <section class="about-section" id="about">
+            <div class="about-container">
+
+                <div class="about-heading">
+                    <p class="eyebrow">THE STORY BEHIND SINELOKAL</p>
+
+                    <h2>
+                        Every Filipino story<br>
+                        <span>deserves to be discovered.</span>
+                    </h2>
+                </div>
+
+                <div class="about-content">
+
+                    <div class="about-intro">
+
+                        <p class="about-lead">
+                            More than just movies, Filipino films carry
+                            the stories, experiences, and emotions that
+                            bring us together.
+                        </p>
+                    </div>
+
+                    <div class="about-description">
+                        <p>
+                            SineLokal is a film discovery directory created
+                            to make Filipino cinema easier to explore.
+                            From heartfelt dramas to unforgettable romances
+                            and comedies, we bring films together in one place
+                            so you can spend less time searching and more time
+                            discovering stories worth watching.
+                        </p>
+
+                        <p>
+                            Find a film that catches your attention, learn
+                            more about its story, and follow the link to watch
+                            it on YouTube. With SineLokal, discovering local
+                            films becomes a little easier.
+                        </p>
+
+                        <a class="about-link" href="browse.html">
+                            Discover Filipino films
+                            <span aria-hidden="true">↗</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="about-closing">
+                    <p>OUR STORIES. OUR CULTURE. OUR CINEMA.</p>
+
+                    <span>
+                        Celebrating Filipino stories, one film at a time.
+                    </span>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <div id="footerComponent"></div>
+
+</body>
+</html>

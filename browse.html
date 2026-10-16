@@ -1,0 +1,107 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta
+        name="description"
+        content="Explore Filipino films across different genres, stories, and generations with SineLokal."
+    >
+
+    <meta name="theme-color" content="#0b0b0b">
+
+    <title>Browse Filipino Films | SineLokal</title>
+
+    <link rel="stylesheet" href="css/site.css">
+    <link rel="stylesheet" href="css/navbar.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/disclaimer.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="js/supabase-config.js"></script>
+    <script src="js/supabase-client.js"></script>
+
+    <script src="js/movies.js"></script>
+
+    <script defer src="js/components.js"></script>
+
+    <script defer src="js/disclaimer.js"></script>
+
+    <script defer src="js/app.js"></script>
+</head>
+
+<body data-page="browse">
+
+    <div id="navbarComponent"></div>
+
+    <main class="container">
+
+        <section class="page-hero">
+            <p class="eyebrow">YOUR FILIPINO FILM DIRECTORY</p>
+
+            <h1>Explore the Film Library</h1>
+
+            <p>
+                Discover Filipino movies across different genres,
+                stories, and generations.
+            </p>
+        </section>
+
+        <section class="section browse-section" style="padding-top: 10px;">
+
+            <div class="section-heading">
+                <div>
+                    <h2 id="browseHeading">All Films</h2>
+
+                    <p id="filmCount" aria-live="polite">
+                        Loading films…
+                    </p>
+                </div>
+            </div>
+
+            <div class="browse-controls">
+
+                <input
+                    class="field"
+                    id="filmSearch"
+                    name="filmSearch"
+                    type="search"
+                    placeholder="Search movie titles or stories…"
+                    aria-label="Search movies"
+                >
+
+                <select
+                    class="select-field"
+                    id="genreFilter"
+                    name="genreFilter"
+                    aria-label="Filter by genre"
+                >
+                    <option value="all">All Genres</option>
+                </select>
+
+                <button
+                    class="button button-outline"
+                    id="clearFilters"
+                    type="button"
+                >
+                    Clear filters
+                </button>
+
+            </div>
+
+            <div
+                class="movie-grid"
+                id="filmGrid"
+                aria-live="polite"
+            ></div>
+
+        </section>
+
+    </main>
+
+    <div id="footerComponent"></div>
+
+</body>
+</html>

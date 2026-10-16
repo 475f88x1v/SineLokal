@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Manage Films | SineLokal Admin</title>
+    <link rel="stylesheet" href="../css/site.css">
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="../js/supabase-config.js"></script>
+    <script src="../js/supabase-client.js"></script>
+    <script defer src="../js/admin.js"></script>
+</head>
+<body data-admin-page="movies">
+    <header class="site-header">
+        <div class="nav-shell">
+            <a class="brand" href="../index.html">
+                <img src="../assets/images/SineLokal.png" alt="SineLokal">
+                <span>ADMINISTRATION</span>
+            </a>
+
+            <nav class="main-nav">
+                <a href="../index.html">View site</a>
+                <button class="nav-link" id="adminLogout">Log out</button>
+            </nav>
+        </div>
+    </header>
+
+    <div class="admin-shell">
+        <aside class="admin-sidebar">
+            <h2>SineLokal Admin</h2>
+            <a href="index.html">Dashboard</a>
+            <a class="active" href="movies.html">Manage films</a>
+            <a href="../browse.html">Public library ↗</a>
+        </aside>
+
+        <main class="admin-main">
+            <p class="eyebrow">LIBRARY MANAGEMENT</p>
+            <h1>Manage films</h1>
+            <p class="admin-subtitle">
+                Add, update, feature, or remove film records in Supabase.
+            </p>
+
+            <div
+                id="adminMessage"
+                class="status-message"
+                aria-live="polite"
+            ></div>
+
+            <section class="panel" style="margin-bottom:24px">
+                <h2 id="movieFormTitle">Add a film</h2>
+
+                <form id="movieForm">
+                    <input id="movieId" type="hidden">
+
+                    <div class="admin-form-grid">
+                        <label>
+                            Film title
+                            <input
+                                class="form-field"
+                                id="title"
+                                required
+                                maxlength="180"
+                                placeholder="Film title"
+                            >
+                        </label>
+
+                        <label>
+                            Genre
+                            <select class="select-field" id="genre" required>
+                                <option>Action</option>
+                                <option>Drama</option>
+                                <option>Romance</option>
+                                <option>Comedy</option>
+                                <option>Horror</option>
+                                <option>Crime</option>
+                                <option>Historical</option>
+                                <option>Independent</option>
+                                <option>Fantasy</option>
+                                <option>Documentary</option>
+                                <option>Other</option>
+                            </select>
+                        </label>
+
+                        <label>
+                            Release year
+                            <input
+                                class="form-field"
+                                id="year"
+                                type="number"
+                                min="1890"
+                                max="2100"
+                                placeholder="2026"
+                            >
+                        </label>
+
+                        <label>
+                            Duration
+                            <input
+                                class="form-field"
+                                id="duration"
+                                maxlength="40"
+                                placeholder="1h 45m"
+                            >
+                        </label>
+
+                        <label class="full">
+                            Description
+                            <textarea
+                                class="form-field"
+                                id="description"
+                                maxlength="3000"
+                                placeholder="A short film description..."
+                            ></textarea>
+                        </label>
+
+                        <label class="full">
+                            Poster image path or URL
+                            <input
+                                class="form-field"
+                                id="posterUrl"
+                                placeholder="assets/images/posters/example.jpg"
+                            >
+                        </label>
+
+                        <label class="full">
+                            YouTube / watch link
+                            <input
+                                class="form-field"
+                                id="youtubeUrl"
+                                type="url"
+                                placeholder="https://youtu.be/..."
+                            >
+                        </label>
+
+                        <label class="check-row full">
+                            <input id="featured" type="checkbox">
+                            Feature on homepage
+                        </label>
+                    </div>
+
+                    <div class="admin-actions">
+                        <button
+                            class="button button-gold"
+                            id="saveMovie"
+                            type="submit"
+                        >
+                            Save film
+                        </button>
+
+                        <button
+                            class="button button-outline"
+                            id="cancelMovieEdit"
+                            type="button"
+                        >
+                            Clear form
+                        </button>
+                    </div>
+                </form>
+            </section>
+
+            <section class="panel">
+                <h2>Film records</h2>
+
+                <div class="admin-table-wrap">
+                    <table class="admin-table">
+                        <thead>
+                            <tr>
+                                <th>Title</th>
+                                <th>Genre</th>
+                                <th>Year</th>
+                                <th>Featured</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+
+                        <tbody id="adminMovieRows">
+                            <tr>
+                                <td colspan="5">Loading…</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </main>
+    </div>
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Admin Dashboard | SineLokal</title>
+    <link rel="stylesheet" href="../css/site.css">
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="../js/supabase-config.js"></script>
+    <script src="../js/supabase-client.js"></script>
+    <script defer src="../js/admin.js"></script>
+</head>
+<body data-admin-page="dashboard">
+    <header class="site-header">
+        <div class="nav-shell">
+            <a class="brand" href="../index.html">
+                <img src="../assets/images/SineLokal.png" alt="SineLokal">
+                <span>ADMINISTRATION</span>
+            </a>
+            <nav class="main-nav">
+                <a href="../index.html">View site</a>
+                <button class="nav-link" id="adminLogout">Log out</button>
+            </nav>
+        </div>
+    </header>
+
+    <div class="admin-shell">
+        <aside class="admin-sidebar">
+            <h2>SineLokal Admin</h2>
+            <a class="active" href="index.html">Dashboard</a>
+            <a href="movies.html">Manage films</a>
+            <a href="../browse.html">Public library ↗</a>
+        </aside>
+
+        <main class="admin-main">
+            <p class="eyebrow">CONTROL CENTER</p>
+            <h1>Dashboard</h1>
+            <p class="admin-subtitle">
+                Welcome, <span id="adminIdentity">administrator</span>.
+                Manage the film directory from here.
+            </p>
+
+            <div class="role-note">
+                Admin access is verified with your Supabase profile and
+                protected by database Row Level Security.
+            </div>
+
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <span>Films in database</span>
+                    <strong id="statMovies">—</strong>
+                </div>
+
+                <div class="stat-card">
+                    <span>Registered accounts</span>
+                    <strong id="statUsers">—</strong>
+                </div>
+
+                <div class="stat-card">
+                    <span>Saved favorites</span>
+                    <strong id="statFavorites">—</strong>
+                </div>
+            </div>
+
+            <section class="panel">
+                <h2>Quick actions</h2>
+                <p style="color:var(--muted);font-size:13px">
+                    Add film records, update links and posters, or feature
+                    films on the public homepage.
+                </p>
+                <a class="button button-gold" href="movies.html">
+                    Manage films →
+                </a>
+            </section>
+        </main>
+    </div>
+</body>
+</html>

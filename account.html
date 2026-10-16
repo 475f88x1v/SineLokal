@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+
+    <title>My Account | SineLokal</title>
+
+    <link rel="stylesheet" href="css/site.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="js/supabase-config.js"></script>
+    <script src="js/supabase-client.js"></script>
+    <script defer src="js/account.js"></script>
+</head>
+
+<body>
+    <header class="site-header">
+        <div class="nav-shell">
+            <a class="brand" href="index.html">
+                <img src="assets/images/SineLokal.png" alt="SineLokal">
+                <span>FILIPINO FILMS. CLOSER TO HOME.</span>
+            </a>
+
+            <nav class="main-nav">
+                <a href="index.html">Home</a>
+                <a href="browse.html">Browse</a>
+                <a href="favorites.html">Favorites</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="page-hero">
+            <p class="eyebrow">YOUR SIN ELOKAL PROFILE</p>
+            <h1>My Account</h1>
+            <p>Manage your account and discover more Filipino films.</p>
+        </section>
+
+        <section
+            class="panel"
+            style="max-width:620px;margin-bottom:60px"
+        >
+            <div id="accountInfo">Loading account…</div>
+
+            <button
+                class="button button-outline"
+                id="accountLogout"
+                type="button"
+            >
+                Log out
+            </button>
+        </section>
+    </main>
+</body>
+</html>
